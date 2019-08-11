@@ -1,0 +1,35 @@
+
+@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap');
+
+body{
+  background-color: rgba(220,220,220,0.5);
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.nouser{
+  font-weight: 600;
+}
+
+.navbar{
+  position:fixed;
+  width:100%;
+  float: left;
+}
+
+.abcd{
+  padding-top: 100px;
+}
+
+nav a{
+  text-decoration: none;
+  color:black;
+  padding: 10px !important;
+  margin: 0px !important;
+}
+
+nav a:hover{
+  text-decoration: none;
+  color:black;
+  background-color: rgba(220,220,220,0.7);
+
+}

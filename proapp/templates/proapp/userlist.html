@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="container">
+
+  <h1 class="nouser">Total number of registered users :  {{userprofile_list.count}}</h1><br>
+
+  <form method="GET">
+
+    <input type="text" name="searchbar" value="{{request.GET.searchbar}}" class="searchbar" placeholder="Search">
+    <button type="submit" class="btn btn-info" name="button">SEARCH</button>
+
+  </form>
+
+  <br><br>
+
+    {% for user in userprofile_list %}
+
+
+        <div class="usersec">
+
+          <h3>{{user.name.username}}  :  {{user.college}} </h3>
+
+          <a href="{% url 'usersdetail'  slug=user.slug %}"> <button type="button" class="btn btn-info" name="button">View Profile</button> </a>
+        </div>
+
+
+      <hr>
+
+
+    {% endfor %}
+
+
+
+
+
+</div>
+
+
+{% endblock %}

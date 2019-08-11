@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+  <div class="container">
+
+    <h2>Profile Page of {{userprofile.name.username}}</h2>
+
+    <h5>Username      : {{userprofile.name.username}}</h5>
+    <h5>College       : {{userprofile.college}}</h5>
+    <h5>Age           : {{userprofile.age}}</h5>
+    <h5>Gender        : {{userprofile.gender}}</h5>
+    <h5>Date of Birth : {{userprofile.dateOfBirth}}</h5>
+
+    <img src="/media/{{userprofile.image}}" width="240" height="300" alt="">
+
+    {% ifequal user.username userprofile.name.username %}
+    <a href="{% url 'userupdate' slug=userprofile.slug %}"><button type="button" class="btn btn-info mx-4" name="button">Update</button></a>
+    <a href="{% url 'userdelete' slug=userprofile.slug %}"><button type="button" class="btn btn-info" name="button">Delete</button></a>
+    {% endifequal %}
+  </div>
+
+{% endblock %}
